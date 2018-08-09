@@ -1,0 +1,144 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'jquery',
+1 verbose cli   'fullcanlendar' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData jquery
+8 silly fetchPackageMetaData fullcanlendar
+9 silly fetchNamedPackageData jquery
+10 silly mapToRegistry name jquery
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/jquery
+14 silly fetchNamedPackageData fullcanlendar
+15 silly mapToRegistry name fullcanlendar
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/fullcanlendar
+19 verbose request uri https://registry.npmjs.org/jquery
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 10:36:04 AM
+22 verbose request id e5c654ffa0546bf9
+23 http request GET https://registry.npmjs.org/jquery
+24 verbose request uri https://registry.npmjs.org/fullcanlendar
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 10:36:04 AM
+27 http request GET https://registry.npmjs.org/fullcanlendar
+28 http 200 https://registry.npmjs.org/jquery
+29 verbose headers { date: 'Thu, 09 Aug 2018 05:36:05 GMT',
+29 verbose headers   'content-type': 'application/json; charset=UTF-8',
+29 verbose headers   'transfer-encoding': 'chunked',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'set-cookie':
+29 verbose headers    [ '__cfduid=dd93fa3d852b88766e2def030cf9fc4101533792965; expires=Fri, 09-Aug-19 05:36:05 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+29 verbose headers   'cache-control': 'max-age=300',
+29 verbose headers   'cf-cache-status': 'HIT',
+29 verbose headers   'cf-ray': '4477dcefdbc931aa-SIN',
+29 verbose headers   etag: 'W/"d668dd701e8583ef72f989188b6c8392"',
+29 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+29 verbose headers   'last-modified': 'Fri, 03 Aug 2018 00:33:00 GMT',
+29 verbose headers   vary: 'accept-encoding, accept',
+29 verbose headers   server: 'cloudflare',
+29 verbose headers   'content-encoding': 'gzip' }
+30 silly get cb [ 200,
+30 silly get   { date: 'Thu, 09 Aug 2018 05:36:05 GMT',
+30 silly get     'content-type': 'application/json; charset=UTF-8',
+30 silly get     'transfer-encoding': 'chunked',
+30 silly get     connection: 'keep-alive',
+30 silly get     'set-cookie':
+30 silly get      [ '__cfduid=dd93fa3d852b88766e2def030cf9fc4101533792965; expires=Fri, 09-Aug-19 05:36:05 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+30 silly get     'cache-control': 'max-age=300',
+30 silly get     'cf-cache-status': 'HIT',
+30 silly get     'cf-ray': '4477dcefdbc931aa-SIN',
+30 silly get     etag: 'W/"d668dd701e8583ef72f989188b6c8392"',
+30 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+30 silly get     'last-modified': 'Fri, 03 Aug 2018 00:33:00 GMT',
+30 silly get     vary: 'accept-encoding, accept',
+30 silly get     server: 'cloudflare',
+30 silly get     'content-encoding': 'gzip' } ]
+31 verbose get saving jquery to /home/tintash/.npm/registry.npmjs.org/jquery/.cache.json
+32 http 404 https://registry.npmjs.org/fullcanlendar
+33 verbose headers { date: 'Thu, 09 Aug 2018 05:36:05 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'content-length': '21',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie':
+33 verbose headers    [ '__cfduid=dc7f90b8ad27a0e8d4520660fd8af144b1533792965; expires=Fri, 09-Aug-19 05:36:05 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'cf-cache-status': 'MISS',
+33 verbose headers   'cf-ray': '4477dcefdbe43090-SIN',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   vary: 'accept-encoding, accept',
+33 verbose headers   server: 'cloudflare' }
+34 silly get cb [ 404,
+34 silly get   { date: 'Thu, 09 Aug 2018 05:36:05 GMT',
+34 silly get     'content-type': 'application/json',
+34 silly get     'content-length': '21',
+34 silly get     connection: 'keep-alive',
+34 silly get     'set-cookie':
+34 silly get      [ '__cfduid=dc7f90b8ad27a0e8d4520660fd8af144b1533792965; expires=Fri, 09-Aug-19 05:36:05 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+34 silly get     'cache-control': 'max-age=300',
+34 silly get     'cf-cache-status': 'MISS',
+34 silly get     'cf-ray': '4477dcefdbe43090-SIN',
+34 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+34 silly get     vary: 'accept-encoding, accept',
+34 silly get     server: 'cloudflare' } ]
+35 silly fetchPackageMetaData Error: Not found : fullcanlendar
+35 silly fetchPackageMetaData     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+35 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+35 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+35 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+35 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+35 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+35 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+35 silly fetchPackageMetaData  error for fullcanlendar { Error: Not found : fullcanlendar
+35 silly fetchPackageMetaData     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+35 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+35 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+35 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+35 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+35 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+35 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12) pkgid: 'fullcanlendar', statusCode: 404, code: 'E404' }
+36 silly rollbackFailedOptional Starting
+37 silly rollbackFailedOptional Finishing
+38 silly runTopLevelLifecycles Starting
+39 silly runTopLevelLifecycles Finishing
+40 silly install printInstalled
+41 verbose stack Error: Not found : fullcanlendar
+41 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+41 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+41 verbose stack     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+41 verbose stack     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+41 verbose stack     at emitTwo (events.js:126:13)
+41 verbose stack     at Request.emit (events.js:214:7)
+41 verbose stack     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+41 verbose stack     at emitOne (events.js:121:20)
+41 verbose stack     at Request.emit (events.js:211:7)
+41 verbose stack     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+42 verbose statusCode 404
+43 verbose pkgid fullcanlendar
+44 verbose cwd /home/tintash/Documents/calender_app
+45 error Linux 4.15.0-20-generic
+46 error argv "/usr/bin/node" "/usr/bin/npm" "install" "jquery" "fullcanlendar"
+47 error node v8.10.0
+48 error npm  v3.5.2
+49 error code E404
+50 error 404 Not found : fullcanlendar
+51 error 404
+52 error 404 'fullcanlendar' is not in the npm registry.
+53 error 404 You should bug the author to publish it (or use the name yourself!)
+54 error 404 Note that you can also install from a
+55 error 404 tarball, folder, http url, or git url.
+56 verbose exit [ 1, true ]

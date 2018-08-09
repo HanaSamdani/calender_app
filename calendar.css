@@ -1,0 +1,11 @@
+.calender-resize
+{ 
+  width:50%;
+  height:60%;
+  overflow-y: scroll;
+}
+
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+}
