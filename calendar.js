@@ -1,17 +1,41 @@
 $(document).ready(function(){
-  $('#start').timepicker();
-  $('#end').timepicker();
+  //Setting JS Plugin Time Picker
+  var startingTimePicker = $('#start').timepicker({
+    showMeridian: false,
+    showWidget: true
+  });
+  var endingTimePicker = $('#end').timepicker({
+    showMeridian: false,
+    showWidget: false
+  });
+
+    //Function for Event with Parameter
+  function Event(title, start, end, allDay){
+    this.title = title;
+    this.start = start;
+    this.end = end;
+    this.allDay = allDay;
+  }
+  
   var moment_init;
+  var events_arr = new Array();
+  
+  //Check for LocalStorage
+  if(localStorage.length >0){
+    events_arr = JSON.parse(localStorage.getItem('events'));
+  }
+  
+  //Initializing Calender Plugin
   $("#calendar").fullCalendar({
     height: 550,
     header: { 
       center: 'title',
       left:'month'
-      //,agendaWeek,agendaDay'
     },
     editable: true,
     //selectable: true,
     eventLimit: true,
+    events: events_arr,
     dayClick: function(date){
       var myDate = moment(date).format("YYYY-MM-DD");
       moment_init = moment(myDate);
@@ -24,39 +48,33 @@ $(document).ready(function(){
       });
     }
   })
+  var events_stored = $('#calendar').fullCalendar('clientEvents');
   $("#submit").click(function(event){
+    //getting start date and time
     let startTime = $("#start").val();
-    var stime_split = startTime.split(" ");
-    var res = stime_split[0].split(":");
-    var startDate = moment_init.set('hour', parseInt(res[0])).set('minute', parseInt(res[1])).set('second', 00);
-        
+    var res = startTime.split(":");
+    var startDate = moment_init.set('hour', parseInt(res[0])).set('minute', parseInt(res[1])).set('second', 0);
+    
+    //getting end date and time
     let endTime = $("#end").val();
-    var etime_split = endTime.split(" ");
-    var res1 = etime_split[0].split(":");
-    var endDate = moment_init.set('hour', parseInt(res1[0])).set('minute', parseInt(res1[1])).set('second', 00);
-
+    var res1 = endTime.split(":");
+    var endDate = moment_init.set('hour', parseInt(res1[0])).set('minute', parseInt(res1[1])).set('second', 0);
+    
     var eventTitle = $("#name").val();
-        //let eDate = moment(date).format("YYYY-MM-DDT");
-        //alert(eventTitle+ " " +startTime+ " "+endTime);
-        /*var events_arr = [];
-        events_arr.push({
-          title: eventTitle,
-          start: startDate,
-          end: endDate,
-        });
-        $("calendar").fullCalendar({
-           events: events_arr
-         });
-        $("calendar").fullCalendar('renderEvents', events_arr);*/
-    $('#calendar').fullCalendar('renderEvent', {
-      title: eventTitle,
-      start: startDate,
-      end: endDate,
-      allDay: false
-      //editable: true
-    });
-        
+    
+    var obj = new Event(eventTitle ,startDate, endDate, false);
+    events_arr.push(obj);
+    console.log(events_arr);
+    
+    localStorage.setItem('events', JSON.stringify(events_arr));
+    
+    $('#calendar').fullCalendar('renderEvent', obj, true);
+    
     event.stopPropagation();
+    $("#start").val("");
+    $("#end").val("");
+    $("#date").val("");
+    $("#name").val("");
     $("#monthModal").modal('hide');
   })
 });
