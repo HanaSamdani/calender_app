@@ -37,6 +37,7 @@ $(document).ready(function(){
     eventLimit: true,
     events: events_arr,
     dayClick: function(date){
+      
       var myDate = moment(date).format("YYYY-MM-DD");
       moment_init = moment(myDate);
       console.log(moment_init);
@@ -45,10 +46,26 @@ $(document).ready(function(){
         let modal = $(this);
         let eventDate = moment(date,'DD/MM/YYYY').format("MMM D, YYYY"); 
         modal.find('.modal-body #date').text(eventDate);
+        
+      });
+    },
+    eventClick: function(event, jsEvent, view){
+      $("#detailsModal").modal('show');
+      $("#detailsModal").on('shown.bs.modal', function(e){
+        
+        let modal = $(this);
+        modal.find('.modal-body #e_title').text(event.title);
+        modal.find('.modal-body #e_date').text("Date: "+moment(event.start).format("MMM D, YYYY"));
+        modal.find('.modal-body #st_time').text("Start time: "+moment(event.start).format("HH:mm"));
+        //modal.find('.modal-body #end_time').text("End time: "+moment(event.end).format("HH:mm"));
+        
       });
     }
   })
+  
   var events_stored = $('#calendar').fullCalendar('clientEvents');
+  
+  //form data:
   $("#submit").click(function(event){
     //getting start date and time
     let startTime = $("#start").val();
