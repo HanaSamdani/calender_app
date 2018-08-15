@@ -48,9 +48,9 @@ $(document).ready(function(){
         let modal = $(this);
         let eventDate = moment(date,'DD/MM/YYYY').format("MMM D, YYYY"); 
         modal.find('.modal-body #date').text(eventDate);
-        getLocation();
         
       });
+      getLocation();
     },
     eventClick: function(event, jsEvent, view){
       $("#detailsModal").modal('show');
@@ -133,7 +133,9 @@ $(document).ready(function(){
         let state_name = weather[0].weather_state_name;
         //let state_abbr = weather[0].weather_state_abbr;
         alert("Weather forecast for "+moment_init.format("MMM D, YYYY")+": "+state_name);
+        
       });
-    })
+    });
+    
   }
 });
